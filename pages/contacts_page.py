@@ -6,7 +6,7 @@ class ContactsPage(BasePage):
     def __init__(self, page:Page) -> None:
         super().__init__(page)
         self.link_add = page.locator("a[href='/add']")
-        self.no_contact_message = page.locator("h1", has_text=" No Contacts here!")
+        self.no_contact_message = page.locator("h1", has_text="No Contacts here!")
 
     def is_link_add_present(self) -> bool:
         return self.is_element_visible(self.link_add)
