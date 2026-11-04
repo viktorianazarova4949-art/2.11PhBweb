@@ -3,3 +3,4 @@ playwright install
 
 pytest --headed # alka test
 
+pytest --headed --slowmo 500

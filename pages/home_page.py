@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from playwright.sync_api import Page
-
+from utils.config_reader import get_property
 
 class HomePage(BasePage):
     def __init__(self, page: Page):
@@ -8,7 +8,7 @@ class HomePage(BasePage):
         self.link_login = page.locator("//a[text()='LOGIN' ]")
 
     def open(self)-> "HomePage":
-        url ="https://telranedu.web.app/home"
+        url = get_property("base_url")
         self.page.goto(url)
         return self
 
