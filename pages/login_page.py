@@ -22,3 +22,6 @@ class LoginPage(BasePage):
 
     def click_btn_login_and_get_alert(self) -> str:
          return self.click_and_get_alert_text(self.btn_login)
+
+    def click_btn_registration_and_get_alert(self) -> str:
+        return self.click_and_get_alert_text(self.btn_registration)
