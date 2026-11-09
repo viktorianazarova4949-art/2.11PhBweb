@@ -6,13 +6,14 @@ from models.contact import Contact
 class AddContactPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
-        self.input_name = page.get_by_placeholder("Name")
-        self.input_last_name = page.get_by_placeholder("LastName")
-        self.input_phone = page.get_by_placeholder("Phone")
-        self.input_email = page.get_by_placeholder("email")
-        self.input_address = page.get_by_placeholder("Address")
-        self.input_description = page.get_by_placeholder("description")
+        self.input_name = page.get_by_placeholder("Name", exact=True)
+        self.input_last_name = page.get_by_placeholder("Last Name", exact=True)
+        self.input_phone = page.get_by_placeholder("Phone", exact=True)
+        self.input_email = page.get_by_placeholder("email", exact=True)
+        self.input_address = page.get_by_placeholder("Address", exact=True)
+        self.input_description = page.get_by_placeholder("description", exact=True)
         self.btn_save = page.locator("//b[text()='Save']")
+
 
     def type_add_contact_form(self, contact: Contact) -> None:
         self.input_name.fill(contact.name)
@@ -24,3 +25,4 @@ class AddContactPage(BasePage):
 
     def click_btn_save(self):
         self.btn_save.click()
+
